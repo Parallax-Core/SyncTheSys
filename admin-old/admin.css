@@ -1,0 +1,349 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+  }
+  
+  .container {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  aside {
+    width: 220px;
+    background: #f7f7c6;
+    padding: 20px;
+  }
+  
+  .logo {
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .nav-link {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background 0.3s;
+  }
+  
+  .nav-link:hover,
+  .nav-link.active {
+    background: #d4ec91;
+  }
+  
+  main {
+    flex: 1;
+    padding: 20px;
+    transition: opacity 0.5s ease;
+  }
+  
+  header h1 {
+    margin-top: 0;
+  }
+  
+  #post-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  #post-form textarea {
+    width: 100%;
+    padding: 10px;
+    resize: vertical;
+  }
+  
+  #post-form input[type="file"] {
+    padding: 5px;
+  }
+  
+  #post-form button,
+  .bold-btn {
+    padding: 8px 12px;
+    border: none;
+    background: #78b74b;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .bold-btn {
+    background: #4CAF50;
+  }
+  
+  .post {
+    background: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .post img {
+    max-width: 100%;
+    margin-top: 10px;
+    border-radius: 4px;
+  }
+  
+  .post .post-actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .post .post-actions button {
+    margin-left: 5px;
+    background: #ccc;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  
+  /* Popup Styles */
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .popup.hidden {
+    display: none;
+  }
+  
+  .popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .popup-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  #rates-summary {
+    margin-bottom: 20px;
+  }
+  
+  .rates-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+  
+  .rate-item {
+    background: white;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: grab;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s;
+  }
+  
+  .rate-item:active {
+    cursor: grabbing;
+    transform: scale(1.05);
+  }
+  
+  .rate-item img {
+    width: 100%;
+    height: 150px; /* or whatever fixed height you prefer */
+    object-fit: cover; /* this will stretch/crop nicely */
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  
+  .rate-actions {
+    margin-bottom: 10px;
+  }
+  
+  .rate-actions button {
+    margin: 0 5px;
+    background: #ccc;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background 0.3s;
+  }
+  
+  .rate-actions button:hover {
+    background: #aaa;
+  }
+  
+  .rate-details {
+    text-align: center;
+  }
+  
+  .rate-details .name-price {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .rate-details label {
+    margin-top: 5px;
+    display: block;
+  }
+  
+  .visibility-toggle {
+    margin-top: 8px;
+  }
+  
+  .visibility-toggle label {
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .hidden-rate {
+    opacity: 0.4;
+  }
+  
+  /* Smooth transitions for main sections */
+  main {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+  
+  main.fade-out {
+    opacity: 0;
+  }
+  
+  main.fade-in {
+    opacity: 1;
+  }
+  
+  /* Enhanced popup buttons */
+  .popup-buttons button {
+    padding: 8px 12px;
+    background: #78b74b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .popup-buttons button:hover {
+    background: #5a943d;
+  }
+  
+  /* Dragging visual feedback */
+  .dragging {
+    opacity: 0.5;
+    border: 2px dashed #78b74b;
+  }
+  
+  /* Ensure consistent look */
+  button:focus {
+    outline: none;
+  }
+  
+  input, textarea {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  input:focus, textarea:focus {
+    border-color: #78b74b;
+    outline: none;
+  }
+  
+  .summary-controls {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .summary-controls input {
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 150px;
+  }
+  
+  .summary-controls button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px; /* <== reduce gap to minimum */
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .summary-header {
+    font-weight: bold;
+    background-color: #bdf5bd;
+    padding: 6px 0;
+  }
+  
+  .summary-item {
+    background-color: #DFFFD6;
+    padding: 6px 0;
+    border-radius: 2px;
+  }
+
+  .summary-navigation {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .summary-nav-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    margin: 0 5px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .summary-nav-btn.active {
+    background-color: #45a049;
+  }
+  
+  .summary-nav-btn:hover {
+    background-color: #45a049;
+  }
+  

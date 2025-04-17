@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/Pictures/Logo.png">
+    <link rel="stylesheet" href="homepage.css">
+    <title>Material Recovery Facility</title>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-left">
+            <img style="border-radius: 50%;" src="/Pictures/Logo.png" alt="Logo" class="logo-icon">
+            <div class="logo-text">Material Recovery Facility</div>
+            <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+        <nav class="navbar-center">
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Contacts</a></li>
+            </ul>
+        </nav>
+        <div class="navbar-right">
+            <div class="auth-buttons">
+                <a href="mrfkiosk.html" class="auth-btn">Magbenta ng Kalakal</a>
+            </div>
+            <div class="user-menu" id="userMenuToggle">
+                <img src="/Pictures/user-photo.jpg" alt="User" class="user-photo">
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <div class="profile">
+                        <a href="user-profile.html" class="profile-link">
+                        <img src="/Pictures/user-photo.jpg" alt="User Photo" class="user-photo">
+                        <span class="username">Ed Caluag</span>
+                        </a>
+                    </div>
+                    <ul>
+                        <li><a href="user.html"><i class="icon">⚙️</i> Profile Settings</a></li>
+                        <li><a href="#"><i class="icon">❓</i> Help & Support</a></li>
+                        <li><a href="#"><i class="icon">💬</i> Give Feedback</a></li>
+                        <li><a href="#"><i class="icon">🚪</i> Log out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Material Recovery Facility</h1>
+                <p>Barangay Bagong Silangan</p>
+            </div>
+            <div class="slider">
+                <div class="slider-wrapper">
+                    <img src="/Pictures/Cleaning.jfif" alt="Image 1" class="slider-image active">
+                    <img src="/Pictures/Cleaning2.jfif" alt="Image 2" class="slider-image">
+                    <img src="/Pictures/Cleaning3.jfif" alt="Image 3" class="slider-image">
+                    <img src="/Pictures/Cleaning5.jfif" alt="Image 2" class="slider-image">
+                    <img src="/Pictures/Cleaning6.jfif" alt="Image 3" class="slider-image">
+                </div>
+                <button class="slider-btn prev" onclick="manualSlide(-1)">❮</button>
+                <button class="slider-btn next" onclick="manualSlide(1)">❯</button>
+            </div>
+        </section>
+        <section class="content-box">
+            <div class="missionvision">
+                <div class="vision">
+                    <h2>Vision</h2>
+                    <p>BARANGAY BAGONG SILANGAN<br>
+                        ENVISION OF A UNIFIED PROGRESSIVE<br>
+                        AND GOD-FEARING COMMUNITY.<br>
+                        SELF-RELIANT AND INDEPENDENT<br>
+                        INSTITUTION THAT IS EFFECTIVELY<br>
+                        AND EFFICIENTLY DELIVERS THE BASIC<br>
+                        SERVICE TO ITS PEOPLE IN THE SPIRIT<br>
+                        OF PUBLIC SERVANT SHIP.</p>
+                </div>
+                <div class="mission">
+                    <h2>Mission</h2>                
+                    <p>IN KEEPING WITH THIS MISSION,<br>
+                        BARANGAY BAGONG SILANGAN OF<br>
+                        QUEZON CITY DISTRICT II DECLARES,<br>
+                        ITS MISSION TO ENCOURAGE EVERY<br>
+                        INDIVIDUAL, HOMEOWNERS, YOUTH<br>
+                        ORGANIZATION, PEOPLE'S<br>
+                        ORGANIZATION TO PARTICIPATE IN<br>
+                        DECISION MAKING OF THE<br>
+                        BARANGAY.<br><br>
+                    
+                        TO STRENGTHEN THE FAMILY MORAL<br>
+                        VALUES TO BE A GOD-FEARING<br>
+                        MEMBER OF THE COMMUNITY.<br>
+                        TO STRENGTHEN THE PEACE AND<br>
+                        ORDER COMMITTEE FOR THE<br>
+                        PROMOTION OF FAIR JUSTICE AND<br>
+                        PEACE OF THE BARANGAY TO<br>
+                        INITIATE A SUSTAINABLE<br>
+                        LIVELIHOOD TRAINING PROGRAMS<br>
+                        THAT WILL HELP THE PEOPLE TO<br>
+                        EARN LIVING. TO ENCOURAGE<br>
+                        PRIVATE INDIVIDUALS AND<br>
+                        INSTITUTION TO INVEST<br>
+                        COMMERCIAL ESTABLISHMENT THAT<br>
+                        WILL CREATE MASS EMPLOYMENT IN<br>
+                        THE BARANGAY.</p>
+                </div>
+            </div>
+            <div class="service-box">
+                <div class="service-header">
+                    <button class="service-btn" onclick="toggleSection('announcements')">
+                        Announcement
+                        <span class="subtitle">Anunsyo</span>
+                    </button>
+                    <button class="service-btn" onclick="toggleSection('rates')">
+                        Rates
+                        <span class="subtitle">Presyo ng Kalakal</span>
+                    </button>
+                    <button class="service-btn" onclick="toggleSection('summary')">
+                        Summary
+                        <span class="subtitle">Buod</span>
+                    </button>
+                </div>                
+                <div class="announcements" id="announcements">
+                    <div class="announcement">
+                        <div class="announcement-header">
+                            <img src="profile-picture.jpg" alt="Profile Picture">
+                            <div class="meta">
+                                <span class="name">Barangay Council</span><br>
+                                <span>37 minutes ago</span>
+                            </div>
+                        </div>
+                        <div id="posts-container" class="announcement-content"></div>
+                            <script src="apostconnection.js"></script>
+                        <div class="announcement-actions">
+                            <button><img src="/Pictures/like-icon.png" alt="Like Icon"> Like</button>
+                            <button><img src="/Pictures/comment-icon.png" alt="Comment Icon"> Comment</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="rates" id="rates">
+                    Description:
+                    Our daily update rates are designed to provide you with the most up-to-date information. 
+                    <div class="rates-list">
+                        <div class="rate-item">
+                            <h3>Rates:</h3>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>ITEM</th>
+                                        <th>CONSIDERATION</th>
+                                        <th>COST</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Bottle</td>
+                                        <td style="color: green;">Accepting</td>
+                                        <td>2.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>White Paper</td>
+                                        <td style="color: green;">Accepting</td>
+                                        <td>3.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Magazine</td>
+                                        <td style="color: green;">Accepting</td>
+                                        <td>5.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Carton</td>
+                                        <td style="color: green;">Accepting</td>
+                                        <td>5.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wheel</td>
+                                        <td style="color: green;">Accepting</td>
+                                        <td>10.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Iron</td>
+                                        <td style="color: green;">Accepting</td>
+                                        <td>0.10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Plastic Bottle</td>
+                                        <td style="color: red;">Exclude</td>
+                                        <td>6.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aluminum</td>
+                                        <td style="color: red;">Exclude</td>
+                                        <td>15.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="summary" id="summary">
+                    <h3>Summary</h3>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Material Recovery Facility. All rights reserved.</p>
+    </footer>
+    <script src="homepage.js"></script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+aside {
+  width: 220px;
+  background: #f7f7c6;
+  padding: 20px;
+  border-right: solid black;
+}
+
+.logo {
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-link {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  background: #d4ec91;
+}
+
+main {
+  flex: 1;
+  padding: 20px;
+  transition: opacity 0.5s ease;
+}
+
+header h1 {
+  margin-top: 0;
+}
+
+#post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+/* Style the div inside the form to have buttons on the left and right */
+#post-form div {
+display: flex;
+justify-content: space-between; /* Space between the groups */
+width: 50%;
+align-items: center; /* Align items vertically */
+}
+
+/* Group for the left-side buttons (Bold and Choose File) */
+#post-form div > div {
+display: flex;
+align-items: center; /* Align the buttons vertically */
+gap: 10px; /* Space between buttons */
+flex-grow: 1; /* Allow the group to take available width */
+}
+
+#post-form textarea {
+  width: 50%;
+  padding: 10px;
+  resize: vertical;
+}
+
+/* Style the input for file upload */
+#post-form input[type="file"] {
+display: none; /* Hide the original input field */
+}
+#posts-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style the post button (right-side button) */
+#post-form button[type="submit"] {
+background-color: #007bff; /* Blue background */
+color: white; /* White text */
+padding: 10px 20px; /* Some padding */
+border: none; /* Remove the border */
+cursor: pointer; /* Change cursor on hover */
+font-size: 14px; /* Match font size with the other buttons */
+border-radius: 5px; /* Rounded corners */
+}
+
+#post-form button[type="submit"]:hover {
+background-color: #0056b3; /* Darken on hover */
+}
+
+.post {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 48%;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+}
+
+.post img {
+  display: block;
+  margin: 10px auto;
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 4px;
+  max-height: 1000px;
+  object-fit: contain
+}
+
+.post-content {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.post-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 10px;
+}
+
+
+.post .post-actions {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.post .post-actions button {
+  margin-left: 5px;
+  color: white; /* White text */
+  padding: 10px 20px; /* Some padding */
+  border: none; /* Remove the border */
+  cursor: pointer; /* Change cursor on hover */
+  font-size: 14px; /* Match font size with the other buttons */
+  border-radius: 5px; /* Rounded corners */
+  margin-right: 10px; /* Space between buttons */
+}
+
+.post .post-actions .edit-btn{
+  background-color: #30b8f7; /* Blue background */
+}
+
+.post .post-actions .delete-btn{
+  background-color: #D11A2A; /* Green background */
+}
+
+
+/* Hide the original file input */
+#image-input {
+display: none;
+}
+
+/* Style the custom file button (Choose File) */
+.file-btn {
+background-color: #4CAF50; /* Green background */
+color: white; /* White text */
+padding: 10px 20px; /* Some padding */
+border: none; /* Remove the border */
+cursor: pointer; /* Change cursor on hover */
+font-size: 14px; /* Match font size with the other buttons */
+border-radius: 5px; /* Rounded corners */
+margin-right: 10px; /* Space between buttons */
+}
+
+/* Hover effect for file button */
+.file-btn:hover {
+background-color: #45a049; /* Darken on hover */
+}
+
+/* Style the bold button to look like the others */
+.bold-btn {
+background-color: #4CAF50; /* Green background */
+color: white; /* White text */
+padding: 10px 20px; /* Some padding */
+border: none; /* Remove the border */
+cursor: pointer; /* Change cursor on hover */
+font-size: 14px; /* Match font size with the other buttons */
+border-radius: 5px; /* Rounded corners */
+margin-right: 10px; /* Space between buttons */
+}
+
+/* Hover effect for bold button */
+.bold-btn:hover {
+background-color: #45a049; /* Darken on hover */
+}
+
+/* Style the post button (right-side button) */
+#post-form button[type="submit"] {
+background-color: #007bff; /* Blue background */
+color: white; /* White text */
+padding: 10px 20px; /* Some padding */
+border: none; /* Remove the border */
+cursor: pointer; /* Change cursor on hover */
+font-size: 14px; /* Match font size with the other buttons */
+border-radius: 5px; /* Rounded corners */
+margin-left: auto; /* Push the post button to the far right */
+}
+
+/* Hover effect for post button */
+#post-form button[type="submit"]:hover {
+background-color: #0056b3; /* Darken on hover */
+}
+
+#profile-settings {
+display: flex;
+align-items: center;
+gap: 10px;
+margin-bottom: 20px;
+justify-content: center;
+}
+
+#profile-settings img {
+width: 50px;
+height: 50px;
+border-radius: 50%;
+object-fit: cover;
+border: 2px solid #ccc;
+}
+
+#profile-settings input[type="text"] {
+padding: 8px;
+border: 1px solid #ccc;
+border-radius: 5px;
+font-size: 14px;
+}
+
+#profile-pic-input {
+display: none;
+}
+
+#profile-settings label {
+background-color: #6c63ff;
+color: white;
+padding: 8px 16px;
+border-radius: 5px;
+cursor: pointer;
+font-size: 14px;
+}
+
+/* Profile preview in settings */
+.profile-preview {
+width: 50px;
+height: 50px;
+border-radius: 50%;
+}
+
+.post-top {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 10px;
+}
+
+.post-header {
+display: flex;
+align-items: center;
+}
+
+.post-header .post-profile-img {
+width: 40px !important;
+height: 40px !important;
+border-radius: 50% !important;
+margin-right: 10px;
+border: 2px solid #ccc;
+object-fit: cover !important;
+display: inline-block !important;
+}

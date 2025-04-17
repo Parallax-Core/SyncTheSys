@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/Pictures/Logo.png">
+    <link rel="stylesheet" href="user-profile.css">
+    <title>Material Recovery Facility</title>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-left">
+          <img style="border-radius: 50%;" src="/Pictures/Logo.png" alt="Logo" class="logo-icon">
+            <div class="logo-text">Material Recovery Facility</div>
+            <button class="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </button>
+        </div>
+        <nav class="navbar-center">
+            
+            <ul class="nav-links" id="navLinks">
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Contacts</a></li>
+            </ul>
+        </nav>
+        <div class="navbar-right">
+            <div class="auth-buttons">
+              <a href="mrfkiosk.html" class="auth-btn">Magbenta ng Kalakal</a>
+            </div>
+            <div class="user-menu" id="userMenuToggle">
+                <img src="/Pictures/user-photo.jpg" alt="User" class="user-photo">
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <div class="profile">
+                        <a href="#" class="profile-link">
+                        <img src="/Pictures/user-photo.jpg" alt="User Photo" class="user-photo">
+                        <span class="username">Ed Caluag</span>
+                        </a>
+                    </div>
+                    <ul>
+                        <li><a href="user.html"><i class="icon">⚙️</i> Profile Settings</a></li>
+                        <li><a href="#"><i class="icon">❓</i> Help & Support</a></li>
+                        <li><a href="#"><i class="icon">💬</i> Give Feedback</a></li>
+                        <li><a href="#"><i class="icon">🚪</i> Log out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+    <section class="profile-section" id="profileSection">
+        <div class="popup-header">
+          <div style="display: flex; align-items: center;">
+            <img src="/Pictures/user-photo.jpg" alt="Ed Caluag">
+            <div>
+              <strong>Ed Caluag</strong><br>
+              <small>20 Followers</small>
+            </div>
+          </div>
+        </div>
+        <p>One of the web developer and designer of OCU BSIT Portal</p>
+        <div class="popup-content">
+          <div class="popup-tabs">
+            <div class="tab active" onclick="showTab(0)">Overview</div>
+            <div class="tab" onclick="showTab(1)">Placed Lived</div>
+            <div class="tab" onclick="showTab(2)">Contact and basic info</div>
+          </div>
+          <div class="popup-section active" id="section-0">
+            <p>📘 <span>Studied at Bagong Silangan High School</span></p>
+            <p>📍 <span>Lives in Quezon City, Philippines</span></p>
+            <p>📍 <span>From Rodriguez, Rizal</span></p>
+            <p>❤️ <span>Single</span></p>
+            <p>📞 <span>0909 090 9090</span></p>
+          </div>
+          <div class="popup-section" id="section-1">
+            <p>🏠 <span>Quezon City</span></p>
+            <p>📍 <span>Rodriguez, Rizal</span></p>
+          </div>
+          <div class="popup-section" id="section-2">
+            <p>📧 <span>edcaluag@email.com</span></p>
+            <p>📱 <span>0909 090 9090</span></p>
+          </div>
+        </div>
+    </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Material Recovery Facility. All rights reserved.</p>
+    </footer>
+    <script src="user-profile.js"></script>
+</body>
+</html>

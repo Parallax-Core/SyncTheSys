@@ -1,0 +1,764 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 0;
+    background-color: #f9f9f9;
+    margin: 30px 0 0 0;
+}
+
+header {
+    background-color: #f0f0e6;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    height: 40px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav a {
+    position: relative;
+    color: #333;
+    text-decoration: none;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #4CAF50;
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: #4CAF50;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Hamburger Styles */
+.hamburger {
+    width: 30px;
+    height: 25px;
+    background: none;
+    border: none;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 0;
+    border: none;
+    outline: none;
+  }
+  
+  .hamburger .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #000;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Animate to "X" */
+  .hamburger.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Navbar Layout */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Make sure it only spans the visible viewport */
+    max-width: 100%; /* Prevent it from going over */
+    background-color: #f9fcbf;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    border-bottom: 1px solid #ccc;
+    z-index: 1000;
+    box-sizing: border-box; /* Important: makes padding included in width */
+    height: auto;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.navbar-center .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-center .nav-links a {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.language {
+    font-size: 14px;
+    cursor: pointer;
+}
+.user-menu {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.user-menu .user-photo {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+/* Dropdown Styles */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background-color: white;
+    border: 2px solid #c1f0c1;
+    border-radius: 8px;
+    width: 220px;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.dropdown-menu .profile a {
+    text-decoration: none;
+    color: inherit; /* Optional: makes the text match the surrounding style */
+    display: flex;
+    align-items: center;
+}
+
+/*.user-menu:hover .dropdown-menu {
+    display: block;
+}*/
+
+.dropdown-menu .profile {
+    display: flex;
+    align-items: center;
+    background-color: #c1f0c1;
+    padding: 10px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.dropdown-menu .profile .user-photo {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.username {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.dropdown-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+}
+
+.dropdown-menu ul li {
+    padding: 8px 10px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-menu ul li:hover {
+    background-color: #f2f2f2;
+}
+
+.dropdown-menu ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-menu ul li .icon {
+    margin-right: 8px;
+}
+
+/* profile pic ---------------------------------------------------------------------------------------------*/
+.user-photo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Glow effect on hover */
+.user-photo:hover {
+    box-shadow: 0 0 12px #4CAF50, 0 0 20px #81C784;
+    transform: scale(1.05);
+    animation: float 2s ease-in-out infinite;
+}
+
+/* Optional: floating animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.profile-link:hover .user-photo {
+    animation: float 2s ease-in-out infinite;
+}
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.auth-btn {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.auth-btn:hover {
+    background-color: #81C784;
+}
+
+/* Hero Section ----------------------------------------------------------------------------------------*/
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px; /* spacing between text and slider */
+    flex-wrap: wrap; /* allows responsiveness for small screens */
+    padding: 50px 20px;
+    text-align: left;
+}
+.hero-content {
+    flex: 1;
+    max-width: 400px;
+    padding-left: 50px; /* Padding for left side text */
+}
+.hero-content h1 {
+    font-size: 70px;
+    color: #4CAF50;
+}
+.hero-content p {
+    font-size: 20px;
+    color: #666;
+}
+/* Slider Styles ----------------------------------------------------------------------------------------*/
+.slider {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 900px;
+    height: auto; /* 🔥 Fixed height to prevent div from growing */
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.slider-wrapper {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+    width: 100%;
+    height: 100%; /* 🔥 Ensure wrapper fills the slider height */
+}
+
+.slider-image {
+    width: 100%;
+    height: 100%; /* 🔥 Force all images to fill the slider */
+    object-fit: cover; /* 🔥 Keep images from distorting */
+    flex-shrink: 0;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.slider-btn.prev {
+    left: 10px;
+}
+
+.slider-btn.next {
+    right: 10px;
+}
+
+#announcements {
+    display: block; /* Show by default */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    width: 70%; /* Width of the announcement box */
+    max-width: 800px; /* Maximum width for larger screens */
+}
+#rates {
+    display: none; /* Hidden by default */
+}
+#summary {
+    display: none; /* Hidden by default */
+}
+.content-box {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 20px;
+}
+
+.services {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 20px;
+}
+
+.service-box {
+    border: 1px solid #d8d8d8;
+    padding: 20px;
+    width: 70%;
+    text-align: center;
+    display: flex; /* Use flexbox to align buttons side by side */
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center the buttons horizontally */
+    gap: 20px; /* Add space between the buttons */
+}
+
+/* Service Header ----------------------------------------------------------------------------------------*/
+.service-header {
+    background-color: #c9f1b4;
+    display: flex; /* Use flexbox to align buttons side by side */
+    flex-direction: row; /* Ensure buttons are in a row */
+    justify-content: center; /* Center the buttons horizontally */
+    align-items: center; /* Center the buttons vertically */
+    width: 60%; /* Width of the service header box */
+    max-width: 650px;
+}
+.service-btn {
+    background-color: #c9f1b4; /* Light green background */
+    border: 2px solid transparent; /* Remove default border */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding for the button */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Bold text */
+    color: #333; /* Text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    gap: 8px; /* Space between icon and text */
+    width: 60%;
+    flex-direction: column;
+}
+.service-btn .subtitle {
+    font-size: 11px;
+    color: #777;
+    margin-top: 2px;
+}
+.service-btn img {
+    width: 24px; /* Icon size */
+    height: 24px;
+}
+
+.service-btn:hover {
+    background-color: #a2ec7a; /* Slightly darker green on hover */
+}
+
+.service-btn:focus {
+    outline: 2px solid #4CAF50; /* Green outline on focus */
+    outline-offset: 2px; /* Space between the outline and the button */
+}
+
+.service-btn + .service-btn {
+    margin-left: 5px; /* Space between buttons */
+}
+
+/*mission and vision----------------------------------------------------------------------------------*/
+.missionvision {
+    border: 1px solid #d8d8d8;
+    padding: 30px;
+    width: 25%;
+    text-align: center;
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+}
+.missionvision h2{
+    font-size: 24px; /* Title font size */
+    color: #4CAF50; /* Green color for title */
+    margin-bottom: 10px; /* Space below the title */
+}
+
+.mission {
+    background-color: #c9f1b4;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    width: 80%; /* Width of the mission box */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+
+}
+
+.vision {
+    background-color: #c9f1b4;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    width: 80%; /* Width of the mission box */  
+    margin-bottom: 20px; /* Space below the mission box */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+
+}
+/* Announcement Box ------------------------------------------------------------------------------------*/
+.announcement {
+    background-color: #ffffff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding inside the box */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 20px auto; /* Center the announcement with vertical spacing */
+    font-family: Arial, sans-serif; /* Font style */
+    color: #333; /* Text color */
+    width: 80%; /* Adjust width as needed */
+    max-width: 600px; /* Limit maximum width */
+}
+
+.announcement-header {
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 15px; /* Space below the header */
+}
+
+.announcement-header img {
+    width: 40px; /* Profile picture size */
+    height: 40px; /* Profile picture size */
+    border-radius: 50%; /* Circular profile picture */
+    margin-right: 10px; /* Space between image and text */
+}
+
+.announcement-header .meta {
+    font-size: 14px; /* Metadata font size */
+    color: #888; /* Light gray color for metadata */
+}
+
+.announcement-header .meta .name {
+    font-weight: bold; /* Bold name */
+    color: #333; /* Darker color for name */
+}
+
+.announcement-content {
+    font-size: 16px; /* Content font size */
+    line-height: 1.5; /* Line height for readability */
+    margin-bottom: 15px; /* Space below the content */
+}
+
+.announcement-actions {
+    display: flex; /* Flexbox for actions */
+    justify-content: space-around; /* Space actions evenly */
+    border-top: 1px solid #ddd; /* Top border for separation */
+    padding-top: 10px; /* Padding above actions */
+}
+.announcement-actions img {
+    width: 20px; /* Icon size */
+    height: 20px; /* Icon size */
+    margin-right: 5px; /* Space between icon and text */
+}
+.announcement-actions button {
+    background: none; /* No background */
+    border: none; /* No border */
+    color: #4CAF50; /* Green color for actions */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size for actions */
+    display: flex; /* Flexbox for icon and text */
+    align-items: center; /* Center icon and text vertically */
+    gap: 5px; /* Space between icon and text */
+    width: 50%; /* Width of the button */
+    text-align: center; /* Center text inside button */
+    justify-content: center; /* Center items horizontally */
+    padding: 10px; /* Padding inside button */
+}
+
+.announcement-actions button:hover {
+    background-color: #cccccc; /* Light gray background on hover */
+    border-radius: 4px; /* Slightly rounded corners */
+    color: #333; /* Darker text color on hover */
+    transition: background-color 0.2s ease, color 0.2s ease; /* Smooth transition effect */
+}
+
+/* Rate Table ---------------------------------------------------------------------------------------------*/
+.rates {
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    width: 70%; /* Width of the rate table */
+    max-width: 800px; /* Maximum width for larger screens */
+}
+.rate-item table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+}
+
+.rate-item th, .rate-item td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.rate-item th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    text-align: center;
+}
+
+.rate-item td {
+    text-align: center;
+}
+
+.rate-item tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.rate-item tr:hover {
+    background-color: #f1f1f1;
+}
+
+.rate-item th:first-child, .rate-item td:first-child {
+    text-align: left;
+}
+
+.rate-item th:last-child, .rate-item td:last-child {
+    text-align: right;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0e6;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Optional: Responsive tweak */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 15px;
+        width: 100%;
+      }
+}
+/* Mobile Responsive Styles */
+@media (max-width: 480px) {
+    .hero {
+        display: block;
+        justify-content: center;
+        align-items: center;
+    }
+    .hero-content {
+        flex: none;
+        padding-left: 50px; /* Padding for left side text */
+    }
+    .hero-content h1 {
+        font-size: 48px;
+        color: #4CAF50;
+    }
+    .hero-content p {
+        font-size: 20px;
+        color: #666;
+    }
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 10px;
+      }
+    
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 15px;
+        width: 100%;
+      }
+    
+      .navbar-left {
+        width: 100%;
+        justify-content: space-between;
+      }
+    
+      .navbar-center {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        background-color: #f9fcbf;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+        border-top: 1px solid #ccc;
+        z-index: 999;
+      }
+    
+      .navbar-center.show {
+        display: flex;
+      }
+    
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        padding: 0;
+      }
+    
+      .nav-links li {
+        margin: 10px 0;
+      }
+    
+      .navbar-right {
+        width: 100%;
+        justify-content: flex-end;
+      }    
+    
+      .language {
+        display: none;
+      }
+    
+      .hamburger {
+        display: flex;
+      }
+    
+    .service-btn {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .service-header {
+        width: 90%;
+    }
+
+    .services, .content-box {
+        padding: 20px 10px;
+    }
+
+    .service-box, .missionvision {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .mission, .vision {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .announcement, 
+    .rates, 
+    #announcements {
+        width: 95%;
+    }
+
+    .slider {
+        height: 300px; /* Shorter slider for mobile */
+        flex: none; /* Prevent flex-grow */
+    }
+    .hero {
+        display: flex;
+    }
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+    .rate-item table {
+        font-size: 14px;
+    }
+    .content-box {
+        flex-direction: column;
+        align-items: center;
+    }
+    .service-box {
+        order: 1;
+    }
+    .missionvision {
+        width: 80%;
+        margin-bottom: 20px;
+        order: 2;
+    }
+    
+    .hero-content {
+        padding-left: 20px;
+        text-align: center;
+    }
+    .slider {
+        margin-top: 30px;
+    }
+    footer {
+        padding: 15px;
+    }
+}

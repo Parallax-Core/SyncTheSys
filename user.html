@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/Pictures/Logo.png">
+    <title>Account Center</title>
+    <link rel="stylesheet" href="user.css">
+</head>
+<body>
+    <button class="exit-button" onclick="redirectToHomepage()">×</button>
+    <div class="sidebar">
+        <a href="homepage.html"><img style="border-radius: 50%;" src="/Pictures/Logo.png" alt="Logo" class="logo"></a>
+        <div class="menu">
+            <h2>Account Center</h2>
+            <button class="sidebar-btn" onclick="toggleSection('personalDetails')">Personal Details</button>
+            <h2>Account Settings</h2>
+            <button class="sidebar-btn" onclick="toggleSection('passwordSecurity')">Password & Security</button>
+        </div>
+    </div>
+    <div class="content">
+        <div id="personalDetails">
+                <h2>Personal Details</h2>
+                <p>MRF uses this information to verify your identity and to keep our community safe. You decide what personal details you make visible to others.</p>
+                <div class="overlay" id="overlay" onclick="togglePopup(null, false)"></div>
+                <div class="input-box">
+                    <div class="overlay" id="overlay"></div>
+                    <button class="custom-button1" onclick="togglePopup('popupForm1', true)">
+                        Contact Information <br>
+                        <span style="color: grey;">example@gmail.com, +639********</span>
+                    </button>
+                    <div class="popup-form" id="popupForm1">
+                        <button class="close-button" onclick="togglePopup('popupForm1', false)">×</button>
+                        <h2>Contact Information</h2>
+                        <p>Manage your Mobile Numbers and Email Addresses to make sure that your contact info is accurate and up to date.</p>
+        <!--NESTED POPUP-->               
+                        <div class="nested-popup11">
+        <!--NP1-->                    
+                            <button class="custom-button1" onclick="togglePopup('popupForm11', true)">
+                                example@gmail.com <br>
+                            </button>
+                                    <div class="popup-form" id="popupForm11">
+                                        <button class="close-button" onclick="togglePopup('popupForm11', false)">×</button>
+                                        <h3>example@gmail.com</h3>
+                                        <p>You added this email address to these accounts. <a href=""> Who can see your email address.</a></p>
+                                            <button class="submit-button" type="submit">Add to another account</button>
+                                            <button class="cancel-button" type="submit">Delete email address</button>
+                                    </div>
+        <!--NP2-->
+                            <button class="custom-button2" onclick="togglePopup('popupForm12', true)">
+                                +639******** <br>
+                            </button>
+                                    <div class="popup-form" id="popupForm12">
+                                        <button class="close-button" onclick="togglePopup('popupForm12', false)">×</button>
+                                        <h3>+639********</h3>
+                                        <p>You added this contact number to these accounts. <a href=""> Who can see your contact numbers.</a></p>
+                                        <button class="submit-button" type="submit">Add to another account</button>
+                                        <button class="cancel-button" type="submit">Delete contact number</button>
+                                    </div>
+        <!--NP3-->
+                            <button class="custom-button3" onclick="togglePopup('popupForm13', true)">
+                                example@yahoo.com <br>
+                            </button>
+                                        <div class="popup-form" id="popupForm13">
+                                            <button class="close-button" onclick="togglePopup('popupForm13', false)">×</button>
+                                            <h3>example@yahoo.com</h3>
+                                            <p>You added this email address to these accounts. <a href=""> Who can see your email address.</a></p>
+                                            <button class="submit-button" type="submit">Add to another account</button>
+                                            <button class="cancel-button" type="submit">Delete email address</button>
+                                        </div>
+                        </div>
+                    </div>
+
+        <!--Date of Birth / Nationality / Status / Address---------------------------------------------------------------------------->
+                    <button class="custom-button2" onclick="togglePopup('popupForm2', true)">
+                        Date of Birth / Nationality / Status / Address <br>
+                        <span style="color: grey;">28 February 1998, Filipino, Single, #67 Malvar Street, Bagong Silangan, QC</span>
+                    </button>
+                    <div class="popup-form" id="popupForm2">
+                        <button class="close-button" onclick="togglePopup('popupForm2', false)">×</button>
+                        <h2>Date of Birth / Nationality / Status / Address</h2>
+                        <p>Manage your date of Birth, Nationality, Status and Address to make sure that your contact info is accurate and up to date.</p>
+                        <div class="popup-form2-input">
+                            Date of Birth
+                            <input type="date">
+                            Nationality
+                            <select required>
+                                <option value="">Nationality</option>
+                                <option value="Filipino">Filipino</option>
+                                <option value="American">American</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            Status
+                            <select required>
+                                <option value="">Status</option>
+                                <option value="Single">Single</option>
+                                <option value="Married">Married</option>
+                                <option value="Widow/er">Widow/er</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            Address
+                            <input type="text" placeholder="House No, Street, Barangay, City">
+                            <button class="submit-button">Confirm</button>
+                        </div> 
+                    </div>
+
+        <!--Account Ownership and Control---------------------------------------------------------------------------------------->
+                    <button class="custom-button3" onclick="togglePopup('popupForm3', true)">
+                        Account Ownership and Control <br>
+                        <span style="color: grey;">Deactivate or delete your account</span>
+                    </button>
+                    <div class="popup-form" id="popupForm3">
+                        <button class="close-button" onclick="togglePopup('popupForm3', false)">×</button>
+                        <h2>Deactivating or deleting your MRF account</h2>
+                        <p>If you want to take a break from MRF, you can temporarily deactivate this account.</p>
+                        <p>If you want to permanently delete your account, let us know.</p>
+                        <div class="popup-form3-input">
+                            <button class="popup-form3-button1" onclick="togglePopup('popupForm31', true)">
+                                Deactivate Account <br>
+                                <span style="color: grey;">Deactivating your account is temporary. Your account and main profile will be deactivated and your name and photos will be removed from most things that you’ve shared. You’ll be able to continue using Messenger.</span>
+                            </button>
+        <!--NP DEACTIVATE-->
+                            <div class="nested-popup31">
+                                <div class="popup-form" id="popupForm31">
+                                <button class="close-button" onclick="togglePopup('popupForm31', false)">×</button>
+                                <h3>Deactivating or deleting your MRF account</h3>
+                                <p>If you want to take a break from MRF, you can temporarily deactivate this account.</p>
+                                <p>If you want to permanently delete your account, let us know.
+                                    <div class="options">
+                                        <label><input type="radio" name="reason"> This is temporary. I'll be back.</label>
+                                        <label><input type="radio" name="reason"> I don't feel safe on MRF.</label>
+                                        <label><input type="radio" name="reason"> I receive too many emails, invitations, and requests from MRF.</label>
+                                        <label><input type="radio" name="reason"> I don't find MRF useful.</label>
+                                        <label><input type="radio" name="reason"> I spend too much time on MRF.</label>
+                                    </div>
+                                    <div style="display: flex;">
+                                        <button class="cancel-button" onclick="togglePopup('popupForm31', false)">Cancel</button>
+                                        <button class="submit-button">Confirm</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="popup-form3-button3" onclick="togglePopup('popupForm32', true)">
+                                Delete Account <br>
+                                <span style="color: grey;">Deleting your account is permanent. When you delete your account, your main profile and everything else that you’ve added will be permanently deleted. You won’t be able to retrieve anything that you’ve added. All additional profiles, Messenger and all of your messages will also be deleted.</span>
+                            </button>
+        <!--NP DELETE-->
+                            <div class="nested-popup32">
+                                <div class="popup-form" id="popupForm32">
+                                <button class="close-button" onclick="togglePopup('popupForm32', false)">×</button>
+                                <h3>Before you delete, we may be able to help</h3>
+                                <p>We're sorry to see you go. We'd like to know why you're deleting your account, as we may be able to help with common issues. You may also continue without selecting a reason.</p>
+                                    <div class="options">
+                                        <label><input type="radio" name="reason"> I spend too much time on MRF.</label>
+                                        <label><input type="radio" name="reason"> I have a privacy concern.</label>
+                                        <label><input type="radio" name="reason"> I don’t feel safe on MRF.</label>
+                                        <label><input type="radio" name="reason"> My account was hacked.</label>
+                                        <label><input type="radio" name="reason"> I no longer find MRF useful.</label>
+                                    </div>
+                                    <div style="display: flex;">
+                                        <button class="cancel-button" onclick="togglePopup('popupForm32', false)">Cancel</button>
+                                        <button class="submit-button">Confirm</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="display: flex;">
+                                <button class="cancel-button" onclick="togglePopup('popupForm3', false)">Cancel</button>
+                                <button class="submit-button">Confirm</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>       
+            
+        </div>
+<!--------------------------------------------------------------------------------------------------------------------->        
+        <div class="passwordsecurity" id="passwordSecurity">
+            <h2>Password and Security</h2>
+            <strong>Login</strong>
+            <p>Manage your passwords, login preferences, and recovery methods</p>
+            <button class="custom-button1" onclick="togglePopup('popupForm41', true)">
+                Change Password <br>
+                <span style="color: grey;">Request to the Admin to change your password.</span>
+            </button>
+                    <div class="popup-form" id="popupForm41">
+                        <button class="close-button" onclick="togglePopup('popupForm41', false)">×</button>
+                        <h3>Ed Caluag - MRF</h3>
+                        <h3>Change Password</h3>
+                        <p>Your password must be at least 6 characters and should include a combination of numbers, letters, and special characters (!@$%^).</p>
+                        <input type="text" placeholder="New Password">
+                        <input type="text" placeholder="Re-type your New Password">
+                        <input type="text" placeholder="Why do you want to change your password? (Optional)"> 
+                        <button class="submit-button" type="submit">Request New Password</button>
+                    </div>
+            <button class="custom-button3" onclick="togglePopup('popupForm42', true)">
+                Where you Logged In <br>
+                <span style="color: grey;">Check your history where you logged in different devices.</span>
+            </button>
+                    <div class="popup-form" id="popupForm42">
+                        <button class="close-button" onclick="togglePopup('popupForm42', false)">×</button>
+                        <h3>Ed Caluag - MRF</h3>
+                        <h3>Account Login Activity</h3>
+                        <p>You're currrently logged in to these devices:</p>
+                        <button class="custom-button4">
+                            <span>Windows PC</span>
+                            <span>Quezon City, Philippines</span>
+                            <span style="color: rgb(56, 199, 0);">This Device</span>
+                        </button>
+                        <h3>Logins on other Devices</h3>
+                        <div class="button-group">
+                            <button class="btn first">
+                                <span>Windows PC</span>
+                                <span>Quezon City, Philippines</span>
+                                <span style="color: grey;">Yesterday at 17:02</span>
+                            </button>
+                            <button class="btn">
+                                <span>Windows PC</span>
+                                <span>Quezon City, Philippines</span>
+                                <span style="color: grey;">23 January at 18:58</span>
+                            </button>
+                            <button class="btn last">
+                                <span style="color: red;">Select Devices to Log Out</span>
+                            </button>
+                        </div>
+                        <button class="submit-button" type="submit">Request New Password</button>
+                    </div>
+
+        </div>
+    </div>
+<script src="user.js"></script>
+</body>
+</html>

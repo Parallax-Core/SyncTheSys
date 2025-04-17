@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="admin.css" />
+  <link rel="stylesheet" href="admin1.css" />
+  <link rel="stylesheet" href="admin2.css" />
+
+</head>
+<body>
+  <div class="container">
+    <aside>
+      <div class="logo">Logo</div>
+      <nav>
+        <ul>
+          <li class="nav-link active" data-section="announcement">Announcement</li>
+          <li class="nav-link" data-section="rates">Rates</li>
+          <li class="nav-link" data-section="summary">Summary</li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main>
+      <header>
+        <h1 id="page-title">Announcement</h1>
+      </header>
+
+      <section id="content">
+        <!-- Dynamic content will load here -->
+      </section>
+    </main>
+  </div>
+
+  <div class="popup-overlay" id="popup-overlay">
+    <div class="popup hidden" id="rate-popup">
+        <h3>Add / Edit Rate Item</h3>
+      <form id="rate-form">
+        <input type="text" id="rate-name" placeholder="Item Name" required />
+        <input type="number" id="rate-price" placeholder="Price (PHP)" required />
+        <input type="file" id="rate-image" accept="image/*" />
+        <label>
+          <input type="checkbox" id="rate-visibility" />
+          Visible
+        </label>
+        <div class="popup-buttons">
+          <button type="submit">Complete</button>
+          <button type="button" id="popup-cancel">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>  
+
+  <script src="admin.js"></script>
+  <script src="admin1.js"></script>
+  <script src="admin2.js"></script>
+
+</body>
+</html>

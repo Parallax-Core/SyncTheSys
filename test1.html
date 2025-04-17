@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Page</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Optional CSS file for styling -->
+</head>
+<body>
+
+  <div id="content">
+    <h1 id="page-title">User Posts</h1>
+    <div id="posts-container"></div> <!-- Posts will be rendered here -->
+  </div>
+
+  <script src="apostconnection.js"></script> <!-- Link to your JavaScript file for user-side functionality -->
+</body>
+</html>
+
+<style>
+    /* Example CSS for styling the posts */
+#posts-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.post {
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+.post-top {
+  display: flex;
+  align-items: center;
+}
+
+.post-profile-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.post-author {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.post-content {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.post-image img {
+  max-width: 100%;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+</style>
