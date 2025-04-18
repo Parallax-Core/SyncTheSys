@@ -298,8 +298,8 @@ nav a:hover::after {
     padding-left: 50px; /* Padding for left side text */
 }
 .hero-content h1 {
-    font-size: 70px;
-    color: #4CAF50;
+    font-size: 80px;
+    color: #167400;
 }
 .hero-content p {
     font-size: 20px;
@@ -636,21 +636,21 @@ footer p {
         align-items: flex-start;
         height: auto;
         padding: 10px;
-      }
+    }
     
-      .navbar {
+    .navbar {
         flex-direction: column;
         align-items: flex-start;
         padding: 10px 15px;
         width: 100%;
-      }
+    }
     
-      .navbar-left {
+    .navbar-left {
         width: 100%;
         justify-content: space-between;
-      }
+    }
     
-      .navbar-center {
+    .navbar-center {
         display: none;
         width: 100%;
         flex-direction: column;
@@ -661,35 +661,35 @@ footer p {
         padding: 10px 0;
         border-top: 1px solid #ccc;
         z-index: 999;
-      }
+    }
     
-      .navbar-center.show {
+    .navbar-center.show {
         display: flex;
-      }
+    }
     
-      .nav-links {
+    .nav-links {
         flex-direction: column;
         width: 100%;
         text-align: center;
         padding: 0;
-      }
+    }
     
-      .nav-links li {
+    .nav-links li {
         margin: 10px 0;
-      }
+    }
     
-      .navbar-right {
+    .navbar-right {
         width: 100%;
         justify-content: flex-end;
-      }    
+    }    
     
-      .language {
+    .language {
         display: none;
-      }
+    }
     
-      .hamburger {
+    .hamburger {
         display: flex;
-      }
+    }
     
     .service-btn {
         width: 100%;
@@ -701,20 +701,19 @@ footer p {
         width: 90%;
     }
 
-    .services, .content-box {
-        padding: 20px 10px;
-    }
-
-    .service-box, .missionvision {
+    .service-box {
         width: 90%;
         padding: 20px;
+        order: 1;
     }
 
     .mission, .vision {
         width: 100%;
         margin-bottom: 15px;
     }
-
+    .announcement{
+        box-sizing: border-box;
+    }
     .announcement, 
     .rates, 
     #announcements {
@@ -742,15 +741,19 @@ footer p {
         flex-direction: column;
         align-items: center;
     }
-    .service-box {
-        order: 1;
-    }
     .missionvision {
-        width: 80%;
+        width: 88%;
         margin-bottom: 20px;
         order: 2;
+        align-content: center;
+        justify-content: center;
+        padding: 25px;
     }
-    
+    .mission,
+    .vision {
+        width: 90%;
+        font-size: smaller;
+    }
     .hero-content {
         padding-left: 20px;
         text-align: center;
